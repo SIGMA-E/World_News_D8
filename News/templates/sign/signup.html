@@ -1,0 +1,17 @@
+{% extends 'account/welcome.html' %}
+
+{% block title %}
+SignUp
+{% endblock title %}
+
+{% block content %}
+    <div class="signup_div">
+        <h2 align="center">Форма регистрации на сайте</h2>
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Зарегистрироваться" class="button_signup">
+        </form>
+    </div>
+    <p align="center"><b><a href="{% url 'login' %}">Войти на сайт</a></b></p>
+{% endblock content %}

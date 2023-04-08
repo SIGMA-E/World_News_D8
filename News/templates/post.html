@@ -1,0 +1,63 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'search' %}">Найти пост</a></li>
+            {% if post.type_post == 'nw' %}
+                <li><a href="{% url 'create_news' %}">Создать новость</a></li>
+                <li><a href="{% url 'update_news' pk=post.pk %}">Редактировать новость</a></li>
+                <li><a href="{% url 'delete_news' pk=post.pk %}">Удалить новость</a></li>
+            {% elif post.type_post == 'ar' %}
+                <li><a href="{% url 'create_article' %}">Создать статью</a></li>
+                <li><a href="{% url 'update_article' pk=post.pk %}">Редактировать статью</a></li>
+                <li><a href="{% url 'delete_article' pk=post.pk%}">Удалить статью</a></li>
+            {% endif %}
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+
+    <div class="info_user_div_detail">
+        {% if request.user.is_authenticated %}
+            <p>Пользователь: <b>{{ request.user.username }}</b></p>
+            <p>Email: <b>{{ request.user.email }}</b></p>
+            <button class="button_reg"><a href="{% url 'logout' %}">Выйти</a></button>
+<!--                кнопка стать автором-->
+                {% if is_not_author %}
+                    <button class="button_author"><a href="{% url 'upgrade_user' %}">Стать автором</a></button>
+                    <p class="author_note"><i>Только <b>автор</b> имеет возможность <br>
+                        создавать и редактировать посты!</i></p>
+                {% endif %}
+<!--                конец кнопки стать автором-->
+        {% else %}
+            <p><i>Использовать фильтры, редактировать<br> создавать и удалять посты
+                могут только<br> зарегистрированные пользователи!</i></p>
+            <button class="button_reg"><a href="{% url 'login' %}">Войти</a></button>
+        {% endif %}
+    </div>
+
+    <div class="padd">
+        <table class="table list">
+            <tr>
+                <th>Заголовок поста</th>
+                <th>Содержание поста</th>
+            </tr>
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.text_post|filter_words }}</td>
+            </tr>
+        </table>
+        <hr>
+        <ul class="list post_ul">
+            <li><b>Автор:</b> {{ post.author }}</li>
+            <li><b>Дата публикации:</b> {{ post.time_post|date:'d F Y' }}</li>
+            <li><b>Время публикации:</b> {{ post.time_post|time:'H:i:s' }}</li>
+        </ul>
+    </div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Search
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+    <h1>Найти пост</h1>
+    <div class="search_div">
+        <form action="{% url 'list' %}" method="get">
+            {{ filterset.form.as_p }}
+            <input type="submit" value="Искать" class="button_post">
+        </form>
+    </div>
+
+{% endblock content %}

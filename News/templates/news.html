@@ -1,0 +1,78 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% block title %}
+Posts
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'search' %}">Найти пост</a></li>
+            <li><a href="{% url 'create_news' %}">Создать новость</a></li>
+            <li><a href="{% url 'create_article' %}">Создать статью</a></li>
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+
+    <div class="info_user_div">
+        {% if request.user.is_authenticated %}
+            <p>Пользователь: <b>{{ request.user.username }}</b></p>
+            <p>Email: <b>{{ request.user.email }}</b></p>
+            <button class="button_reg"><a href="{% url 'logout' %}">Выйти</a></button>
+<!--                кнопка стать автором-->
+                {% if is_not_author %}
+                    <button class="button_author"><a href="{% url 'upgrade_user' %}">Стать автором</a></button>
+                    <p class="author_note"><i>Только <b>автор</b> имеет возможность <br>
+                        создавать и редактировать посты!</i></p>
+                {% endif %}
+<!--                конец кнопки стать автором-->
+        {% else %}
+            <p><i>Использовать фильтры, редактировать<br> создавать и удалять посты
+                могут только<br> зарегистрированные пользователи!</i></p>
+            <button class="button_reg"><a href="{% url 'login' %}">Войти</a></button>
+        {% endif %}
+    </div>
+
+    <h1>Новости и статьи</h1>
+    <h3>Количество постов на странице: {{posts|length}}</h3>
+    {% if posts %}
+        <table class="table list">
+            <tr>
+                <th>Заголовок</th>
+                <th>Ссылка</th>
+                <th>Тип поста</th>
+                <th>Дата публикации</th>
+                <th>Превью</th>
+            </tr>
+            {% for post in posts %}
+            <tr class="list">
+                <td>{{ post.title }}</td>
+                <td><a href="{% url 'detail' pk=post.pk %}">Читать</a></td>
+                <td>{{ post.get_type_post_display }}</td>
+                <td>{{ post.time_post|date:'d F Y' }}</td>
+                <td>{{ post.text_post|truncatewords:20|filter_words }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+    {% else %}
+        <h3>Нет новостей!!!</h3>
+    {% endif %}
+
+    {% if page_obj.has_previous %}
+        <a href="?{% url_replace page=1 %}">1</a>
+            {% if page_obj.previous_page_number != 1 %}
+                ...
+                <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+            {% endif %}
+    {% endif %}
+    {{ page_obj.number }}
+    {% if page_obj.has_next %}
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+            {% if paginator.num_pages != page_obj.next_page_number %}
+                ...
+                <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+            {% endif %}
+    {% endif %}
+{% endblock content %}

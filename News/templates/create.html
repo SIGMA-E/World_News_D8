@@ -1,0 +1,26 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Create news
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+        {% if request.resolver_match.url_name == 'create_news'%}
+            <h1>Создать новость</h1>
+        {% elif request.resolver_match.url_name == 'create_article' %}
+            <h1>Создать статью</h1>
+        {% endif %}
+    <div class="create_div">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Создать" class="button_post">
+        </form>
+    </div>
+
+{% endblock content %}

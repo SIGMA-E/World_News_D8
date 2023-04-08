@@ -1,0 +1,143 @@
+body {
+    background: linear-gradient( to right, #48D1CC, #40E0D0, #AFEEEE )
+}
+
+/*----------------------------------------*/
+/*Блок для страницы login*/
+.login_div {
+    width: 500px;
+    text-align: center;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-right: 0%;
+}
+
+.login_div table {
+    margin-left: 18%;
+}
+
+
+/*----------------------------------------*/
+/*Поле password*/
+input#id_password {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+
+/*----------------------------------------*/
+/*Поле username*/
+input#id_username {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+
+/*----------------------------------------*/
+/*стиль для кнопки*/
+.button_login {
+    background-color: skyblue;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 10px 24px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+/*----------------------------------------*/
+/*Блок для страницы login*/
+.signup_div {
+    width: 1000px;
+    text-align: left;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+input#id_first_name {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+    margin-left: 40px;
+
+}
+
+input#id_last_name {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+
+input#id_email {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+    margin-left: 30px;
+}
+
+input#id_password1 {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+    margin-left: 15px;
+}
+
+input#id_password2 {
+    width: 250px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+/*----------------------------------------*/
+/*стиль для кнопки*/
+.button_signup {
+    background-color: skyblue;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 10px 24px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40%;

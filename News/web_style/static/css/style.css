@@ -1,0 +1,393 @@
+body {
+    background: linear-gradient( to right, #48D1CC, #40E0D0, #AFEEEE )
+}
+
+.content {
+    text-align: center;
+}
+
+.header {
+    background-color: #5F9EA0;
+    padding: 1px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+/*---------------------------------------------------------------------------*/
+/*стиль верхних ссылок*/
+.header_link ul {
+    padding: 0;
+    width: 100%;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.header_link li {
+    display: inline;
+    margin-right: 5px;
+    margin-left: -1.2%;
+}
+
+.header_link a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 17%;
+    margin-right: 1%;
+    text-align: center;
+    line-height: 3;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.header_link li:last-child a {
+    margin-right: 0;
+}
+
+.header_link a:link, a:visited, a:focus {
+    background: lightskyblue;
+}
+
+.header_link a:hover {
+    background: gray;
+}
+
+.header_link a:active{
+    background: limegreen;
+    color: white;
+}
+/*КОНЕЦ/
+/*----------------------------------------------------------------------------*/
+
+.list {
+    text-align: left;
+}
+
+.post_ul {
+    list-style-type: square;
+}
+
+.padd{
+    padding-top: 20px;
+    margin-top: 80px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    margin-top: 50px; 
+}
+
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #5F9EA0;
+    border: 1px solid #dddddd;
+}
+
+.table td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+
+.table_post th {
+    width: 100px;
+}
+
+/*----------------------------------------*/
+
+/*стиль для ввода текта заголовка*/
+.border_input {
+    width: 78.5%;
+    margin: 10px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    }
+
+/*стиль для ввода текта заголовка*/
+.border_datetime{
+    width: 200px;
+    margin: 10px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    }
+
+/*----------------------------------------*/
+
+/*стиль для выбора через select */
+.border_select {
+    width: 222px;
+    margin: 10px;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+
+/*----------------------------------------*/
+
+/*стиль для блока поиска поста Search*/
+.search_div {
+    width: 60%;
+    text-align: right;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: absolute;
+    left: 20%;
+    margin-top: 30px;
+}
+
+/*----------------------------------------*/
+
+/*стль для блока создания поста Create*/
+.create_div {
+    width: 60%;
+    text-align: right;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: absolute;
+    left: 20%;
+    margin-top: 30px;
+}
+
+/*----------------------------------------*/
+
+/*стль для блока удаления поста Delete*/
+.delete_div {
+    width: 60%;
+    text-align: left;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: absolute;
+    left: 20%;
+    margin-top: 30px;
+    padding-left: 10px;
+}
+/*----------------------------------------*/
+
+/*стиль для кнопки*/
+.button_post {
+    background-color: skyblue;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 10px 24px;
+    border-radius: 4px;
+    margin-right: 42%;
+    margin-bottom: 20px;
+
+}
+
+/*----------------------------------------*/
+
+/*стиль для кнопки*/
+.button_del {
+    background-color: orangered;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 10px 24px;
+    border-radius: 4px;
+    margin-left: 42%;
+    margin-bottom: 20px;
+
+}
+/*----------------------------------------*/
+/*стиль для textarea*/
+.text_post {
+    resize: none;
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    border: 1px solid gray;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/*----------------------------------------*/
+
+.errorlist {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*----------------------------------------*/
+/*Блок для Sign in*/
+.sign_div {
+    width: 60%;
+/*    text-align: left;*/
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: relative;
+    left: 20%;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+}
+
+input#id_login {
+    width: 30%;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    margin-left: 25px;
+    background: white;
+}
+
+
+input#id_password {
+    width: 30%;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+
+.primaryAction {
+    background-color: skyblue;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+/*----------------------------------------*/
+/*Блок для Sign up*/
+input#id_email {
+    width: 30%;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+    margin-left: 87px;
+}
+
+
+input#id_password1 {
+    width: 30%;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+    margin-left: 62px;
+}
+
+input#id_password2 {
+    width: 30%;
+    border: 1px solid;
+    border-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Cambria;
+    font-size: 14px;
+    background: white;
+}
+
+.signup button {
+    background-color: skyblue;
+    font-size: 14px;
+    font-family: Cambria;
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.signup {
+    text-align: left;
+}
+
+/*----------------------------------------*/
+/*Блок данных о пользователе*/
+.info_user_div {
+    text-align: right;
+    font-size: 12px;
+    width: 98%;
+    text-align: right;
+    border: solid 0px gray;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+/*----------------------------------------*/
+/*Блок данных о пользователе*/
+.info_user_div_detail {
+    text-align: right;
+    font-size: 12px;
+    width: 98%;
+    text-align: right;
+    border: solid 0px gray;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 5px;
+}
+
+/*----------------------------------------*/
+/*Блок стать автором*/
+.author_note {
+    color: red;
+}
+
+/*----------------------------------------*/
+/*кнопка стать автором*/
+.button_author {
+    background: gold;
+    padding: 5px;
+    border: solid 1px gray;
+    border-radius: 10px;
+    width: 130px;
+    font-family: Cambria;
+}
+
+/*----------------------------------------*/
+/*кнопка стать войти и выйти*/
+.button_reg{
+    background: #dddddd;
+    padding: 5px;
+    border: solid 1px gray;
+    border-radius: 10px;
+    width: 80px;
+    font-family: Cambria;
+}
+
+/*----------------------------------------*/
+/*Блок для страницы logout*/
+.logout_div {
+    text-align: center;
+}
+
+.logout_div1 {
+    width: 60%;
+    text-align: center;
+    border: solid 1px gray;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+}

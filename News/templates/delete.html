@@ -1,0 +1,29 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Delete
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+    {% if object.type_post == 'nw' %}
+        <h1>Удалить новость</h1>
+    {% elif object.type_post == 'ar' %}
+        <h1>Удалить статью</h1>
+    {% endif %}
+
+        <div class="delete_div">
+            <form action="" method="post">
+                {% csrf_token %}
+                <p>Удаляем: <b>"{{ object.title }} ?"</b></p>
+                <p>Автор поста: <b>{{ object.author }}</b></p>
+                <p>Дата публикации: <b>{{ object.time_post|date:'d F Y' }}</b></p>
+                <input type="submit" value="Удалить" class="button_del">
+            </form>
+        </div>
+
+{% endblock content %}

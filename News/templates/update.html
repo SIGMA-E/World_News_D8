@@ -1,0 +1,22 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Update news
+{% endblock title %}
+
+{% block content %}
+    <div class="header header_link">
+        <ul>
+            <li><a href="{% url 'list' %}">На главную</a></li>
+        </ul>
+    </div>
+    <h1>Редактировать новость</h1>
+    <div class="create_div">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Сохранить" class="button_post">
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'account/welcome.html' %}
+
+{% block title %}
+SignIn
+{% endblock title %}
+
+{% block content %}
+    <h3 align="center">Для получения доступа к дополнительным возможностям портала <br>
+        необходимо войти на сайт под своим именем или <a href="{% url 'signup' %}">зарегистрироваться</a>!</h3>
+    <div class="login_div">
+        <h2>Войти на сайт</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="Войти" class="button_login">
+        </form>
+        {% if form.non_field_errors %}
+            <p>Неверный логин или пароль</p>
+        {% endif %}
+    </div>
+{% endblock content %}
